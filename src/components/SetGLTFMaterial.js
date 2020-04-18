@@ -5,29 +5,58 @@ AFRAME.registerComponent('set-gltf-material', {
   schema: {
     color: {
       type: 'color',
-      default: null
+      default: null,
     },
     castShadow: {
       type: 'boolean',
-      default: false
+      default: false,
     },
     receiveShadow: {
       type: 'boolean',
-      default: false
+      default: false,
+    },
+    computeNormals: {
+      type: 'boolean',
+      default: false,
     },
   },
 
   applyMaterialToMesh: function (mesh) {
-    const woodTex = new THREE.TextureLoader().load('/assets/omDgO_4K_Albedo.jpg');
-    this.material = new THREE.MeshPhysicalMaterial({
-        map : woodTex, 
-        roughness : 1,
-    });
-    const { color } = this.data;
+    const handleTextureLoad = (tex) => {
+      tex.repeat.set(240, 240);
+      tex.wrapT = tex.wrapS = THREE.RepeatWrapping;
+    };
 
-    mesh.castShadow = this.data.castShadow;
-    mesh.receiveShadow = this.data.receiveShadow;
-    mesh.geometry.computeVertexNormals()
+    const diffuseTexture = new THREE.TextureLoader().load(
+      '/assets/mountains/mountains_diff.jpg',
+      handleTextureLoad
+    );
+
+    const normalTexture = new THREE.TextureLoader().load(
+      '/assets/mountains/mountains_normal.jpg',
+      handleTextureLoad,
+    );
+
+    const roughnessTexture = new THREE.TextureLoader().load(
+      '/assets/mountains/mountains_roughness.jpg',
+      handleTextureLoad,
+    );
+
+    this.material = new THREE.MeshPhysicalMaterial({
+      map: diffuseTexture,
+      roughness: 0.86,
+      roughnessMap: roughnessTexture,
+      displacementScale: 10,
+      normalMap: normalTexture,
+      normalScale: THREE.Vector2(0.02, 0.02),
+    });
+    const { color, receiveShadow, computeNormals, castShadow } = this.data;
+
+    mesh.castShadow = castShadow;
+    mesh.receiveShadow = receiveShadow;
+    if (computeNormals) {
+      mesh.geometry.computeVertexNormals();
+    }
     mesh.material = this.material;
 
     if (color) {
@@ -35,11 +64,12 @@ AFRAME.registerComponent('set-gltf-material', {
     }
   },
 
+  // Recursively go trough every mesh in the object and assign materials
   applyMaterial: function (mesh) {
-    if (mesh.geometry){
+    if (mesh.geometry) {
       this.applyMaterialToMesh(mesh);
     }
-    mesh.children.forEach(child => {
+    mesh.children.forEach((child) => {
       this.applyMaterial(child);
     });
   },
@@ -51,6 +81,5 @@ AFRAME.registerComponent('set-gltf-material', {
     });
   },
 
-  tick: function (time) {
-  }
+  tick: function (time) {},
 });

@@ -6,78 +6,80 @@
 	"accessors":[
 		{
 			"bufferView":0,
-			"componentType":5123,
-			"count":6021,
+			"componentType":5125,
+			"count":74697,
 			"type":"SCALAR",
 			"min":[0
 			],
-			"max":[6020
+			"max":[74696
 			]
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":6021,
-			"type":"VEC2",
-			"min":[0,0.00076675415
+			"count":74697,
+			"type":"VEC3",
+			"min":[-498.799316,-51.8747406,-498.468628
 			],
-			"max":[0.999970257,1
+			"max":[498.69043,84.5046463,498.406036
 			]
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":6021,
-			"type":"VEC3",
-			"min":[-498.883545,-2.02634907,-499.676056
+			"count":74697,
+			"type":"VEC2",
+			"min":[0,0
 			],
-			"max":[499.108582,51.3202438,499.258392
+			"max":[1,1
 			]
 		},
 		{
 			"bufferView":3,
 			"componentType":5126,
-			"count":6021,
+			"count":74697,
 			"type":"VEC3",
-			"min":[1,1,1
+			"min":[-0.993871689,-0.194330484,-0.994226933
 			],
-			"max":[1,1,1
+			"max":[0.993842721,1,0.984010756
 			]
 		}
 	],
 	"buffers":[
 		{
 			"uri":"mountains_data.bin",
-			"byteLength":204716
+			"byteLength":2689092,
+			"name":"main_buffer"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":12042,
+			"byteLength":298788,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteOffset":12044,
-			"byteLength":48168,
+			"byteOffset":298788,
+			"byteLength":896364,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteOffset":60212,
-			"byteLength":72252,
+			"byteOffset":1195152,
+			"byteLength":597576,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteOffset":132464,
-			"byteLength":72252,
+			"byteOffset":1792728,
+			"byteLength":896364,
 			"target":34962
 		}
 	],
 	"nodes":[
 		{
+			"name":"hills",
 			"mesh":0
 		}
 	],
@@ -86,9 +88,9 @@
 			"primitives":[
 				{
 					"attributes":{
-						"COLOR_0":3,
-						"POSITION":2,
-						"TEXCOORD_0":1
+						"NORMAL":3,
+						"TEXCOORD_0":2,
+						"POSITION":1
 					},
 					"indices":0
 				}
