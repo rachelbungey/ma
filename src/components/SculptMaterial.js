@@ -1,5 +1,6 @@
 import AFRAME from 'aframe';
 const THREE = AFRAME.THREE;
+import CustomPhysicalMaterial from './CustomPhysicalMaterial';
 
 AFRAME.registerComponent('sculpt-material', {
   init: function () {
@@ -25,7 +26,7 @@ AFRAME.registerComponent('sculpt-material', {
 
     const mEnvMap = new THREE.TextureLoader().load('/assets/lightMap.png');
 
-    const woodMaterial = new THREE.MeshPhysicalMaterial({
+    const woodMaterial = new CustomPhysicalMaterial({
       map: woodDiffuse,
       roughness: 0.8,
       normalMap: woodNormals,
