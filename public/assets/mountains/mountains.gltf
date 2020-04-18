@@ -7,73 +7,89 @@
 		{
 			"bufferView":0,
 			"componentType":5125,
-			"count":74697,
+			"count":46338,
 			"type":"SCALAR",
 			"min":[0
 			],
-			"max":[74696
+			"max":[46337
 			]
 		},
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":74697,
+			"count":46338,
 			"type":"VEC3",
-			"min":[-498.799316,-51.8747406,-498.468628
+			"min":[-499.093262,-20.6745872,-499.297028
 			],
-			"max":[498.69043,84.5046463,498.406036
+			"max":[499.206757,78.3886642,499.292542
 			]
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":74697,
-			"type":"VEC2",
-			"min":[0,0
+			"count":46338,
+			"type":"VEC3",
+			"min":[0.77966404,0.799046457,0.830664039
 			],
-			"max":[1,1
+			"max":[1,1,1
 			]
 		},
 		{
 			"bufferView":3,
 			"componentType":5126,
-			"count":74697,
-			"type":"VEC3",
-			"min":[-0.993871689,-0.194330484,-0.994226933
+			"count":46338,
+			"type":"VEC2",
+			"min":[-0.000294685364,-0.0008893013
 			],
-			"max":[0.993842721,1,0.984010756
+			"max":[1.00051761,1.00083089
+			]
+		},
+		{
+			"bufferView":4,
+			"componentType":5126,
+			"count":46338,
+			"type":"VEC3",
+			"min":[-0.945834637,-0.805652738,-0.986889005
+			],
+			"max":[0.977740407,0.999999642,0.975714624
 			]
 		}
 	],
 	"buffers":[
 		{
 			"uri":"mountains_data.bin",
-			"byteLength":2689092,
+			"byteLength":2224224,
 			"name":"main_buffer"
 		}
 	],
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":298788,
+			"byteLength":185352,
 			"target":34963
 		},
 		{
 			"buffer":0,
-			"byteOffset":298788,
-			"byteLength":896364,
+			"byteOffset":185352,
+			"byteLength":556056,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteOffset":1195152,
-			"byteLength":597576,
+			"byteOffset":741408,
+			"byteLength":556056,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteOffset":1792728,
-			"byteLength":896364,
+			"byteOffset":1297464,
+			"byteLength":370704,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteOffset":1668168,
+			"byteLength":556056,
 			"target":34962
 		}
 	],
@@ -88,8 +104,9 @@
 			"primitives":[
 				{
 					"attributes":{
-						"NORMAL":3,
-						"TEXCOORD_0":2,
+						"NORMAL":4,
+						"COLOR_0":2,
+						"TEXCOORD_0":3,
 						"POSITION":1
 					},
 					"indices":0

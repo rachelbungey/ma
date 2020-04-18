@@ -41,14 +41,14 @@ const App = () => (
     <a-gltf-model
       id="dunes"
       src="#dunes"
-      position="0 -1.95 0"
+      position="0 0 0"
       scale="1 1 1"
       set-gltf-material="color: #ffffff; receiveShadow: true;"
     />
     <a-gltf-model
       id="rocks"
       src="#rocks"
-      position="0 -0.84 0"
+      position="0 0 0"
       scale="1 1 1"
       rock-material
     />

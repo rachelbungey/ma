@@ -49,6 +49,7 @@ AFRAME.registerComponent('set-gltf-material', {
       displacementScale: 10,
       normalMap: normalTexture,
       normalScale: THREE.Vector2(0.02, 0.02),
+      vertexColors: true,
     });
     const { color, receiveShadow, computeNormals, castShadow } = this.data;
 
