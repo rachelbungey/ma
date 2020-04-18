@@ -1,5 +1,6 @@
 import AFRAME from 'aframe';
 const THREE = AFRAME.THREE;
+import CustomPhysicalMaterial from './CustomPhysicalMaterial';
 
 AFRAME.registerComponent('set-gltf-material', {
   schema: {
@@ -41,17 +42,18 @@ AFRAME.registerComponent('set-gltf-material', {
       '/assets/mountains/mountains_roughness.jpg',
       handleTextureLoad,
     );
-
-    this.material = new THREE.MeshPhysicalMaterial({
+    
+    const { color, receiveShadow, computeNormals, castShadow } = this.data;
+    this.material = new CustomPhysicalMaterial({
       map: diffuseTexture,
       roughness: 0.86,
-      roughnessMap: roughnessTexture,
+      // roughnessMap: roughnessTexture,
       displacementScale: 10,
       normalMap: normalTexture,
       normalScale: THREE.Vector2(0.02, 0.02),
       vertexColors: true,
     });
-    const { color, receiveShadow, computeNormals, castShadow } = this.data;
+
 
     mesh.castShadow = castShadow;
     mesh.receiveShadow = receiveShadow;
