@@ -1,14 +1,16 @@
 import AFRAME from 'aframe';
+import CustomPhysicalMaterial from './CustomPhysicalMaterial';
 const THREE = AFRAME.THREE;
 
 AFRAME.registerComponent('rock-material', {
   init: function () {
-    const diff = new THREE.TextureLoader().load(
-      '/assets/rocks/rock_sheet_01.png',
-    );
+    let img = document.querySelector('#rocksDiffuse');
 
-    const mat = new THREE.MeshPhysicalMaterial({
-      map: diff,
+    const tex = new THREE.Texture(img);
+    tex.needsUpdate = true;
+
+    const mat = new CustomPhysicalMaterial({
+      map: tex,
       roughness: 0.8,
     });
 

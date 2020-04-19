@@ -18,7 +18,15 @@ const App = () => (
       <a-asset-item id="sculpt4" src="assets/sculpt_04/sculpt_04.gltf" />
       <a-asset-item id="dunes" src="assets/mountains/mountains.gltf" />
       <a-asset-item id="rocks" src="assets/rocks/rocks.gltf" />
-      <img id="envMap" src="assets/lightMap.png"></img>
+      <img id="woodDiffuse" src="/assets/PlywoodNew0079_diff.jpg" />
+      <img id="woodNormal" src="/assets/PlywoodNew0079_normals.jpg" />
+      <img id="groundDiffuse" src="/assets/mountains/mountains_diff.jpg" />
+      <img id="groundNormal" src="/assets/mountains/mountains_normal.jpg" />
+      <img
+        id="groundRoughness"
+        src="/assets/mountains/mountains_roughness.jpg"
+      />
+      <img id="rocksDiffuse" src="/assets/rocks/rock_sheet_01.png" />
     </a-assets>
 
     <a-camera position="0 0 4" />
@@ -27,7 +35,7 @@ const App = () => (
       color="white"
       position="0.42 4.09 -3.57"
       intensity="1.1"
-      light="castShadow: true; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; color: #f9fffb"
+      light="castShadow: false; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; color: #f9fffb"
     />
     <a-entity
       position="0 1 0"
@@ -59,26 +67,38 @@ const App = () => (
     <a-gltf-model
       name="sculpt1"
       src="#sculpt1"
-      position="0 0 0"
-      sculpt-material
+      position="0 0.434 -5"
+      sculpt-material="
+        diffuseMap: #woodDiffuse;
+        normalMap: #woodNormal;
+      "
     />
     <a-gltf-model
       name="sculpt2"
       src="#sculpt2"
-      position="10 0 0"
-      sculpt-material
+      position="36.60016 1.662 29"
+      sculpt-material="
+        diffuseMap: #woodDiffuse;
+        normalMap: #woodNormal;
+      "
     />
     <a-gltf-model
       name="sculpt3"
       src="#sculpt3"
-      position="20 0 0"
-      sculpt-material
+      position="-35.43073 1.266 21"
+      sculpt-material="
+        diffuseMap: #woodDiffuse;
+        normalMap: #woodNormal;
+      "
     />
     <a-gltf-model
       name="sculpt4"
       src="#sculpt4"
-      position="30 0 0"
-      sculpt-material
+      position="0.2774 1.31389 59.92782"
+      sculpt-material="
+        diffuseMap: #woodDiffuse;
+        normalMap: #woodNormal;
+      "
     />
   </a-scene>
 );

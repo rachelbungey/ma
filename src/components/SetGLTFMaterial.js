@@ -23,37 +23,30 @@ AFRAME.registerComponent('set-gltf-material', {
   },
 
   applyMaterialToMesh: function (mesh) {
-    const handleTextureLoad = (tex) => {
-      tex.repeat.set(240, 240);
-      tex.wrapT = tex.wrapS = THREE.RepeatWrapping;
-    };
+    const textures = {};
 
-    const diffuseTexture = new THREE.TextureLoader().load(
-      '/assets/mountains/mountains_diff.jpg',
-      handleTextureLoad
-    );
+    ['#groundDiffuse', '#groundNormal'].forEach((map) => {
+      if (map) {
+        let img = document.querySelector(map);
 
-    const normalTexture = new THREE.TextureLoader().load(
-      '/assets/mountains/mountains_normal.jpg',
-      handleTextureLoad,
-    );
+        const tex = new THREE.Texture(img);
+        tex.needsUpdate = true;
 
-    const roughnessTexture = new THREE.TextureLoader().load(
-      '/assets/mountains/mountains_roughness.jpg',
-      handleTextureLoad,
-    );
-    
+        tex.repeat.set(240, 240);
+        tex.wrapT = tex.wrapS = THREE.RepeatWrapping;
+
+        textures[map] = tex;
+      }
+    });
+
     const { color, receiveShadow, computeNormals, castShadow } = this.data;
     this.material = new CustomPhysicalMaterial({
-      map: diffuseTexture,
+      map: textures['#groundDiffuse'],
       roughness: 0.86,
-      // roughnessMap: roughnessTexture,
-      displacementScale: 10,
-      normalMap: normalTexture,
+      normalMap: textures['#groundNormal'],
       normalScale: THREE.Vector2(0.02, 0.02),
       vertexColors: true,
     });
-
 
     mesh.castShadow = castShadow;
     mesh.receiveShadow = receiveShadow;
