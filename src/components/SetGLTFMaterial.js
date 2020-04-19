@@ -44,7 +44,6 @@ AFRAME.registerComponent('set-gltf-material', {
       map: textures['#groundDiffuse'],
       roughness: 0.86,
       normalMap: textures['#groundNormal'],
-      normalScale: THREE.Vector2(0.02, 0.02),
       vertexColors: true,
     });
 

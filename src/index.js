@@ -10,7 +10,7 @@ import './components/RockMaterial';
 import CameraRig from './CameraRig';
 
 const App = () => (
-  <a-scene background="color: black" fog="type: linear; far=100; near=1;">
+  <a-scene background="color: black" fog="type: linear; far=100; near=1;" renderer="foveationLevel: 2;">
     <a-assets>
       <a-asset-item id="sculpt1" src="assets/sculpt_01/sculpt_01.gltf" />
       <a-asset-item id="sculpt2" src="assets/sculpt_02/sculpt_02.gltf" />
@@ -35,7 +35,7 @@ const App = () => (
       color="white"
       position="0.42 4.09 -3.57"
       intensity="1.1"
-      light="castShadow: false; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; color: #f9fffb"
+      light="castShadow: true; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; color: #f9fffb"
     />
     <a-entity
       position="0 1 0"

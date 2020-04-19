@@ -33,20 +33,21 @@ AFRAME.registerComponent('sculpt-material', {
       map: textures[diffuseMap],
       roughness: 0.8,
       normalMap: textures[normalMap],
-      normalScale: THREE.Vector2(0.1, 0.1),
     });
 
     this.renderer;
 
     this.scene = document.querySelector('a-scene');
     this.renderer = document.querySelector('a-scene').renderer;
-
+    this.renderer.shadowMap.autoUpdate = false;
+      
     this.cubeCamera = new THREE.CubeCamera(1, 100000, 128);
     this.cubeCamera.position.set(0, 10, 0);
     this.el.object3D.add(this.cubeCamera);
 
     this.el.sceneEl.addEventListener('model-loaded', () => {
       this.needEnvUpdate = true;
+      this.renderer.shadowMap.needsUpdate = true;
     });
 
     const chromeMaterial = new THREE.MeshBasicMaterial({
@@ -75,7 +76,7 @@ AFRAME.registerComponent('sculpt-material', {
   },
 
   tick: function (time) {
-    if (this.needEnvUpdate) {
+    if (this.needEnvUpdate && !this.renderer.xr.enabled) {
       this.cubeCamera.update(this.renderer, this.scene.object3D);
       this.needEnvUpdate = false;
     }
