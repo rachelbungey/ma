@@ -901,9 +901,9 @@ acorn@^6.2.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
 
-aframe@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/aframe/-/aframe-1.0.1.tgz#37c51910fc430a0e0b052347fe8c73bd56c230d2"
+aframe@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/aframe/-/aframe-1.0.0.tgz#9d2ee0d85b2c22423b17a43e7df10c32f9bb953b"
   dependencies:
     custom-event-polyfill "^1.0.6"
     debug ngokevin/debug#noTimestamp
@@ -914,7 +914,7 @@ aframe@1.0.1:
     present "0.0.6"
     promise-polyfill "^3.1.0"
     super-animejs "^3.1.0"
-    super-three "^0.111.5"
+    super-three "^0.111.4"
     three-bmfont-text dmarcos/three-bmfont-text#1babdf8507
     webvr-polyfill "^0.10.10"
 
@@ -4655,7 +4655,7 @@ super-animejs@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/super-animejs/-/super-animejs-3.1.0.tgz#59435946faafe880710e348cf24ad3126e45aed1"
 
-super-three@^0.111.5:
+super-three@^0.111.4:
   version "0.111.6"
   resolved "https://registry.yarnpkg.com/super-three/-/super-three-0.111.6.tgz#716df2323b9dbd3528f0ca5d48410d38a03bd444"
 
