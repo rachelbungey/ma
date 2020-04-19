@@ -41,7 +41,7 @@ AFRAME.registerComponent('custom-control', {
         }
 
         const activeMaterial = new THREE.MeshBasicMaterial({
-          color: new THREE.Color("#37ffdd"),
+          color: new THREE.Color(0.8,0.8,0.8),
         });
 
         const buttons = {

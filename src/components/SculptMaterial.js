@@ -20,7 +20,7 @@ AFRAME.registerComponent('sculpt-material', {
         const tex = new THREE.Texture(img);
         tex.needsUpdate = true;
 
-        tex.repeat.set(7, 7);
+        tex.repeat.set(20, 20);
         tex.wrapT = tex.wrapS = THREE.RepeatWrapping;
 
         textures[map] = tex;

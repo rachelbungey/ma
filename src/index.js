@@ -16,8 +16,8 @@ const App = () => (
       <a-asset-item id="sculpt2" src="assets/sculpt_02/sculpt_02.gltf" />
       <a-asset-item id="sculpt3" src="assets/sculpt_03/sculpt_03.gltf" />
       <a-asset-item id="sculpt4" src="assets/sculpt_04/sculpt_04.gltf" />
-      <a-asset-item id="dunes" src="assets/mountains/mountains.gltf" />
-      <a-asset-item id="rocks" src="assets/rocks/rocks.gltf" />
+      <a-asset-item id="duneAsset" src="assets/mountains/mountains.gltf" />
+      <a-asset-item id="rocksAsset" src="assets/rocks/rocks.gltf" />
       <img id="woodDiffuse" src="/assets/PlywoodNew0079_diff.jpg" />
       <img id="woodNormal" src="/assets/PlywoodNew0079_normals.jpg" />
       <img id="groundDiffuse" src="/assets/mountains/mountains_diff.jpg" />
@@ -48,14 +48,14 @@ const App = () => (
     <a-entity sky />
     <a-gltf-model
       id="dunes"
-      src="#dunes"
+      src="#duneAsset"
       position="0 0 0"
       scale="1 1 1"
       set-gltf-material="color: #ffffff; receiveShadow: true;"
     />
     <a-gltf-model
       id="rocks"
-      src="#rocks"
+      src="#rocksAsset"
       position="0 0 0"
       scale="1 1 1"
       rock-material
