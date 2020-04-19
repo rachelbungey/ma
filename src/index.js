@@ -18,15 +18,15 @@ const App = () => (
       <a-asset-item id="sculpt4" src="assets/sculpt_04/sculpt_04.gltf" />
       <a-asset-item id="duneAsset" src="assets/mountains/mountains.gltf" />
       <a-asset-item id="rocksAsset" src="assets/rocks/rocks.gltf" />
-      <img id="woodDiffuse" src="/assets/PlywoodNew0079_diff.jpg" />
-      <img id="woodNormal" src="/assets/PlywoodNew0079_normals.jpg" />
-      <img id="groundDiffuse" src="/assets/mountains/mountains_diff.jpg" />
-      <img id="groundNormal" src="/assets/mountains/mountains_normal.jpg" />
+      <img id="woodDiffuse" src="assets/PlywoodNew0079_diff.jpg" />
+      <img id="woodNormal" src="assets/PlywoodNew0079_normals.jpg" />
+      <img id="groundDiffuse" src="assets/mountains/mountains_diff.jpg" />
+      <img id="groundNormal" src="assets/mountains/mountains_normal.jpg" />
       <img
         id="groundRoughness"
-        src="/assets/mountains/mountains_roughness.jpg"
+        src="assets/mountains/mountains_roughness.jpg"
       />
-      <img id="rocksDiffuse" src="/assets/rocks/rock_sheet_01.png" />
+      <img id="rocksDiffuse" src="assets/rocks/rock_sheet_01.png" />
     </a-assets>
 
     <a-camera position="0 0 4" />
