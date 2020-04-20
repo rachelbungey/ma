@@ -1,6 +1,5 @@
 import AFRAME from 'aframe';
 import { fresnelMaterial } from '../materials/FresnelMaterial';
-import { getHeadsetType } from './Utils.js'
 
 AFRAME.registerComponent('custom-control', {
   schema: {
@@ -10,15 +9,12 @@ AFRAME.registerComponent('custom-control', {
   },
 
   update: async function () {
-    const headsetType = await getHeadsetType();
-
+    var vrHeadset = this.el.sceneEl.checkHeadsetConnected();
     var hand = this.data.hand;
     var controlConfiguration = {
       hand: hand,
-      model: headsetType !== 'Oculus Quest',
+      model: false,
     };
-
-    console.log('[D] headsetType: ', headsetType);
 
     // Build on top of controller components.
     this.el.setAttribute('oculus-go-controls', controlConfiguration);
@@ -29,7 +25,7 @@ AFRAME.registerComponent('custom-control', {
     this.el.setAttribute('windows-motion-controls', controlConfiguration);
 
     // Add controller when entering VR
-    if (headsetType === 'Oculus Quest') {
+    if (vrHeadset) {
       this.el.sceneEl.addEventListener('enter-vr', (ent) => {
         this.el.setAttribute('visible', true);
 
@@ -41,7 +37,7 @@ AFRAME.registerComponent('custom-control', {
         }
 
         const activeMaterial = new THREE.MeshBasicMaterial({
-          color: new THREE.Color(0.8,0.8,0.8),
+          color: new THREE.Color(0.8, 0.8, 0.8),
         });
 
         const buttons = {

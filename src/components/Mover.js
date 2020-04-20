@@ -76,8 +76,6 @@ AFRAME.registerComponent('mover', {
     var intersects = this.raycaster.intersectObject(this.terrain);
     if(intersects[0])
     {
-        console.log(intersects[0].point.y + 1)
-
         return intersects[0].point.y + 1;
     }
     return pos.y;
