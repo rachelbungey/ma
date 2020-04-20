@@ -19,10 +19,14 @@ AFRAME.registerComponent('custom-control', {
     // Build on top of controller components.
     this.el.setAttribute('oculus-go-controls', controlConfiguration);
     this.el.setAttribute('vive-controls', controlConfiguration);
-    this.el.setAttribute('oculus-touch-controls', controlConfiguration);
     this.el.setAttribute('daydream-controls', controlConfiguration);
     this.el.setAttribute('gearvr-controls', controlConfiguration);
     this.el.setAttribute('windows-motion-controls', controlConfiguration);
+    
+    this.el.setAttribute('oculus-touch-controls', {
+      hand: hand,
+      model: true,
+    });
 
     // Add controller when entering VR
     if (vrHeadset) {
