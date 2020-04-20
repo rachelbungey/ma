@@ -24,6 +24,7 @@ AFRAME.registerComponent('mover', {
     });
     this.down = new THREE.Vector3(0,-1,0);
     this.origin = new THREE.Vector3();
+    this.worldQuat = new THREE.Quaternion();
 
     /*
       Oculus remote controller events
@@ -57,7 +58,8 @@ AFRAME.registerComponent('mover', {
       const tweenForward = new THREE.Vector3(0, 0, 1).applyQuaternion(this.camera.quaternion);
       this.handleMove(tweenForward, timeDelta);
     } else if (this.pressedQuest){
-      const tweenForward = new THREE.Vector3(-this.lastAxis.x, 0, -this.lastAxis.y).applyQuaternion(this.camera.getWorldQuaternion());
+      this.camera.getWorldQuaternion(this.worldQuat);
+      const tweenForward = new THREE.Vector3(-this.lastAxis.x, 0, -this.lastAxis.y).applyQuaternion(this.worldQuat);
       this.handleMove(tweenForward, timeDelta);
     }
   },
