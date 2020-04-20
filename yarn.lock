@@ -901,9 +901,9 @@ acorn@^6.2.1:
   version "6.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
 
-aframe@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/aframe/-/aframe-1.0.0.tgz#9d2ee0d85b2c22423b17a43e7df10c32f9bb953b"
+aframe@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/aframe/-/aframe-1.0.4.tgz#1b659533db0f5cf9b002c22804278da8349a32d2"
   dependencies:
     custom-event-polyfill "^1.0.6"
     debug ngokevin/debug#noTimestamp
@@ -914,8 +914,8 @@ aframe@1.0.0:
     present "0.0.6"
     promise-polyfill "^3.1.0"
     super-animejs "^3.1.0"
-    super-three "^0.111.4"
-    three-bmfont-text dmarcos/three-bmfont-text#1babdf8507
+    super-three "^0.111.6"
+    three-bmfont-text dmarcos/three-bmfont-text#1babdf8507c731a18f8af3b807292e2b9740955e
     webvr-polyfill "^0.10.10"
 
 ajv-errors@^1.0.0:
@@ -4655,7 +4655,7 @@ super-animejs@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/super-animejs/-/super-animejs-3.1.0.tgz#59435946faafe880710e348cf24ad3126e45aed1"
 
-super-three@^0.111.4:
+super-three@^0.111.6:
   version "0.111.6"
   resolved "https://registry.yarnpkg.com/super-three/-/super-three-0.111.6.tgz#716df2323b9dbd3528f0ca5d48410d38a03bd444"
 
@@ -4709,7 +4709,7 @@ terser@^4.1.2, terser@^4.6.3:
     source-map "~0.6.1"
     source-map-support "~0.5.12"
 
-"three-bmfont-text@github:dmarcos/three-bmfont-text#1babdf8507":
+"three-bmfont-text@github:dmarcos/three-bmfont-text#1babdf8507c731a18f8af3b807292e2b9740955e":
   version "2.3.0"
   resolved "https://codeload.github.com/dmarcos/three-bmfont-text/tar.gz/1babdf8507c731a18f8af3b807292e2b9740955e"
   dependencies:
