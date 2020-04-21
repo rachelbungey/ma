@@ -23,8 +23,8 @@ AFRAME.registerComponent('quick-turn', {
       this.allowedToQuickturn = true;
     })
     this.el.addEventListener('axismove', (evt) => {
-      this.lastAxis.x = evt.detail.axis[0];
-      this.lastAxis.y = evt.detail.axis[1];
+      this.lastAxis.x = evt.detail.axis[2];
+      this.lastAxis.y = evt.detail.axis[3];
       if(Math.abs(this.lastAxis.x) < 0.2)
       {
         this.allowedToQuickturn = true;
