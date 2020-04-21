@@ -31,16 +31,8 @@ const App = () => (
 
     <a-camera position="0 0 4" />
     {CameraRig()}
-    <a-light
-      color="white"
-      position="0.42 4.09 -3.57"
-      intensity="1.1"
-      light="castShadow: true; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; color: #f9fffb"
-    />
-    <a-entity
-      position="0 1 0"
-      light="type: hemisphere; color: #7d7bcc; groundColor: #bca5cc; intensity: 1.4"
-    />
+    <a-light color="white" position="0.42 4.09 -3.57" intensity="1.1" light="castShadow: true; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; intensity: 0.9"></a-light>
+    <a-entity position="0 1 0" light="type: hemisphere; color: #7d7bcc; groundColor: #bca5cc; intensity: 0.73"></a-entity>
 
     {/*
      * Environment

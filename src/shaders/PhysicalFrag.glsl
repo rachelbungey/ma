@@ -65,12 +65,12 @@ varying vec3 vViewPosition;
 #include <shadowmap_pars_fragment>
 #include <bumpmap_pars_fragment>
 #include <normalmap_pars_fragment>
+#include <clearcoat_pars_fragment>
 #include <roughnessmap_pars_fragment>
 #include <metalnessmap_pars_fragment>
 #include <logdepthbuf_pars_fragment>
 #include <clipping_planes_pars_fragment>
 uniform vec3 shadowColor;
-
 void main() {
 
 	#include <clipping_planes_fragment>
@@ -91,6 +91,7 @@ void main() {
 	#include <clearcoat_normal_fragment_begin>
 	#include <clearcoat_normal_fragment_maps>
 	#include <emissivemap_fragment>
+
 	// accumulation
 	#include <lights_physical_fragment>
 	#include <lights_fragment_begin>
