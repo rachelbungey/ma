@@ -37,6 +37,7 @@ AFRAME.registerComponent('mover', {
     });
 
     this.el.addEventListener('axismove', (evt) => {
+      console.log("[D] axis move: " + evt.detail.axis[0] + " " + evt.detail.axis[1]);
       this.lastAxis.x = evt.detail.axis[0];
       this.lastAxis.y = evt.detail.axis[1];
     });
@@ -45,6 +46,7 @@ AFRAME.registerComponent('mover', {
       Oculus touch controller events
     */
     this.el.addEventListener('thumbsticktouchstart', (evt) => {
+      console.log("[D] thumstick touch start");
       this.pressedQuest = true;
     })
     this.el.addEventListener('thumbsticktouchend', (evt) => {
