@@ -46,6 +46,7 @@ AFRAME.registerComponent('mover', {
     */
     this.el.addEventListener('thumbsticktouchstart', (evt) => {
       this.pressedQuest = true;
+      console.log("[D]: thumbsticktouchstart");
     })
     this.el.addEventListener('thumbsticktouchend', (evt) => {
       this.pressedQuest = false;
