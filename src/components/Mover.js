@@ -46,7 +46,6 @@ AFRAME.registerComponent('mover', {
     */
     this.el.addEventListener('thumbsticktouchstart', (evt) => {
       this.pressedQuest = true;
-      console.log("[D]: thumbsticktouchstart");
     })
     this.el.addEventListener('thumbsticktouchend', (evt) => {
       this.pressedQuest = false;
@@ -55,14 +54,9 @@ AFRAME.registerComponent('mover', {
   },
 
   tick: function (time, timeDelta) {
-    if(this.pressed){
-      const tweenForward = new THREE.Vector3(0, 0, 1).applyQuaternion(this.camera.quaternion);
-      this.handleMove(tweenForward, timeDelta);
-    } else if (this.pressedQuest){
-      this.camera.getWorldQuaternion(this.worldQuat);
-      const tweenForward = new THREE.Vector3(-this.lastAxis.x, 0, -this.lastAxis.y).applyQuaternion(this.worldQuat);
-      this.handleMove(tweenForward, timeDelta);
-    }
+    this.camera.getWorldQuaternion(this.worldQuat);
+    const tweenForward = new THREE.Vector3(-this.lastAxis.x, 0, -this.lastAxis.y).applyQuaternion(this.worldQuat.premultiply(this.camera.quaternion));
+    this.handleMove(tweenForward, timeDelta);
   },
 
   handleMove: function (move, timeDelta) {
