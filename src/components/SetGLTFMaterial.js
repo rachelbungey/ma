@@ -42,7 +42,7 @@ AFRAME.registerComponent('set-gltf-material', {
     const { color, receiveShadow, computeNormals, castShadow } = this.data;
     this.material = new CustomPhysicalMaterial({
       map: textures['#groundDiffuse'],
-      roughness: 0.86,
+      roughness: 0.93,
       normalMap: textures['#groundNormal'],
       vertexColors: true,
     });

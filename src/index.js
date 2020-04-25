@@ -7,6 +7,7 @@ import './components/ReflectiveMat';
 import './components/SetGLTFMaterial';
 import './components/SculptMaterial';
 import './components/RockMaterial';
+import './components/GalleryMaterial';
 import CameraRig from './CameraRig';
 
 const App = () => (
@@ -17,8 +18,9 @@ const App = () => (
     renderer="foveationLevel: 2;"
   >
     <a-assets>
-      <a-asset-item id="sculpt1" src="assets/sculpt_01/sculpt_01.gltf" />
+      <a-asset-item id="gallery" src="assets/gallery/gallery.gltf" />
       <a-asset-item id="sculpt2" src="assets/sculpt_02/sculpt_02.gltf" />
+      <a-asset-item id="sculpt1" src="assets/sculpt_01/sculpt_01.gltf" />
       <a-asset-item id="sculpt3" src="assets/sculpt_03/sculpt_03.gltf" />
       <a-asset-item id="sculpt4" src="assets/sculpt_04/sculpt_04.gltf" />
       <a-asset-item id="duneAsset" src="assets/mountains/mountains.gltf" />
@@ -32,6 +34,10 @@ const App = () => (
         src="assets/mountains/mountains_roughness.jpg"
       />
       <img id="rocksDiffuse" src="assets/rocks/rock_sheet_01.png" />
+      <img id="wall1" src="assets/posters/wall_01.jpg" />
+      <img id="wall2" src="assets/posters/wall_02.jpg" />
+      <img id="wall3" src="assets/posters/wall_03.jpg" />
+      <img id="concrete" src="assets/concrete.jpg" />
     </a-assets>
 
     <a-camera position="0 0 4" />
@@ -39,12 +45,21 @@ const App = () => (
     <a-light
       color="white"
       position="0.42 4.09 -3.57"
-      intensity="1.1"
-      light="castShadow: true; shadowCameraNear: -50; shadowCameraTop: 50; shadowCameraRight: 50; shadowCameraLeft: -50; shadowMapWidth: 2048; shadowMapHeight: 2048; intensity: 0.9"
+      intensity="0.6"
+      light="
+        castShadow: true;
+        shadowCameraNear: -70;
+        shadowCameraTop: 70;
+        shadowCameraRight: 70;
+        shadowCameraLeft: -70;
+        shadowMapWidth: 4096;
+        shadowMapHeight: 4096;
+        intensity: 0.9;
+      "
     ></a-light>
     <a-entity
-      position="0 1 0"
-      light="type: hemisphere; color: #7d7bcc; groundColor: #bca5cc; intensity: 0.73"
+      position="0 0.85 0"
+      light="type: hemisphere; color: #ffffff; groundColor: #ccb2ae; intensity: 0.73"
     ></a-entity>
 
     {/*
@@ -64,6 +79,13 @@ const App = () => (
       position="0 0 0"
       scale="1 1 1"
       rock-material
+    />
+    <a-gltf-model
+      name="gallery"
+      src="#gallery"
+      position="0.95722 0.924 30.081"
+      rotation="0 135 0"
+      gallery-material
     />
 
     {/*
@@ -90,7 +112,7 @@ const App = () => (
     <a-gltf-model
       name="sculpt3"
       src="#sculpt3"
-      position="-35.43073 1.266 21"
+      position="-35.25231 1.02 27.74998"
       sculpt-material="
         diffuseMap: #woodDiffuse;
         normalMap: #woodNormal;
