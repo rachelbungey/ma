@@ -19,7 +19,7 @@ AFRAME.registerComponent('gallery-material', {
       },
       concrete: {
         img: document.querySelector('#concrete'),
-        tile: [10, 10],
+        tile: [4, 4],
       },
     };
 
@@ -43,6 +43,7 @@ AFRAME.registerComponent('gallery-material', {
         const mat = new CustomPhysicalMaterial({
           map: tex,
           roughness: 0.7,
+          color: new THREE.Color("#eae5d9")
         });
 
         mesh.castShadow = true;

@@ -80,13 +80,7 @@ const App = () => (
       scale="1 1 1"
       rock-material
     />
-    <a-gltf-model
-      name="gallery"
-      src="#gallery"
-      position="0.95722 0.924 30.081"
-      rotation="0 135 0"
-      gallery-material
-    />
+    <a-gltf-model name="gallery" src="#gallery" position="-38.43347 0.924 71.77652" rotation="0 50.671241485779746 0" gallery-material="" gltf-model="assets/gallery/gallery.gltf"></a-gltf-model>
 
     {/*
      * Sculptures
