@@ -1,0 +1,17 @@
+#soundBtn {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+
+.btnImage {
+  display: inline-block;
+  z-index: 999;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.btnImage:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

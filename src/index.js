@@ -1,5 +1,7 @@
 import AFRAME from 'aframe';
 import JSX from './JSX';
+import './style.css';
+
 import './components/Spinner';
 import './components/Sky';
 import './components/GlowMaterial';
@@ -8,8 +10,9 @@ import './components/SetGLTFMaterial';
 import './components/SculptMaterial';
 import './components/RockMaterial';
 import './components/GalleryMaterial';
+import './components/SoundController';
+import './components/WebUIController';
 import CameraRig from './CameraRig';
-
 const App = () => (
   <a-scene
     webxr="optionalFeatures: bounded-floor, high-fixed-foveation-level"
@@ -17,6 +20,14 @@ const App = () => (
     fog="type: linear; far=100; near=1;"
     renderer="foveationLevel: 2;"
   >
+    <img
+      class="btnImage"
+      id="soundBtn"
+      src="assets/no-sound.png"
+      alt="sound"
+      title="Toggle sound"
+    />
+    <a-entity web-ui-controller />
     <a-assets>
       <a-asset-item id="gallery" src="assets/gallery/gallery.gltf" />
       <a-asset-item id="sculpt2" src="assets/sculpt_02/sculpt_02.gltf" />
@@ -119,6 +130,15 @@ const App = () => (
       sculpt-material="
         diffuseMap: #woodDiffuse;
         normalMap: #woodNormal;
+      "
+    />
+    <a-entity
+      sound-controller
+      sound="
+        src: url(assets/ambient-wind.mp3);
+        volume:0.2;
+        loop: true;
+        positional: false;
       "
     />
   </a-scene>
