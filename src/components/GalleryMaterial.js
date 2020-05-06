@@ -14,7 +14,7 @@ AFRAME.registerComponent('gallery-material', {
         tile: [1, 1],
       },
       wall3: {
-        img: document.querySelector('#wall2'),
+        img: document.querySelector('#wall3'),
         tile: [1, 1],
       },
       concrete: {
