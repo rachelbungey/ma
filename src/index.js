@@ -4,21 +4,21 @@ import './style.css';
 
 import './components/Spinner';
 import './components/Sky';
-import './components/GlowMaterial';
-import './components/ReflectiveMat';
-import './components/SetGLTFMaterial';
 import './components/SculptMaterial';
 import './components/RockMaterial';
 import './components/GalleryMaterial';
 import './components/SoundController';
 import './components/WebUIController';
+import './components/MountainsMaterial';
 import CameraRig from './CameraRig';
+
 const App = () => (
   <a-scene
     webxr="optionalFeatures: bounded-floor, high-fixed-foveation-level"
     background="color: black"
     fog="type: linear; far=100; near=1;"
-    renderer="foveationLevel: 2;"
+    renderer="foveationLevel: 2"
+    loading-screen="backgroundColor: black"
   >
     <img
       class="btnImage"
@@ -28,14 +28,14 @@ const App = () => (
       title="Toggle sound"
     />
     <a-entity web-ui-controller />
-    <a-assets>
+    <a-assets timeout="10000">
       <a-asset-item id="gallery" src="assets/gallery/gallery.gltf" />
-      <a-asset-item id="sculpt2" src="assets/sculpt_02/sculpt_02.gltf" />
-      <a-asset-item id="sculpt1" src="assets/sculpt_01/sculpt_01.gltf" />
-      <a-asset-item id="sculpt3" src="assets/sculpt_03/sculpt_03.gltf" />
-      <a-asset-item id="sculpt4" src="assets/sculpt_04/sculpt_04.gltf" />
-      <a-asset-item id="duneAsset" src="assets/mountains/mountains.gltf" />
-      <a-asset-item id="rocksAsset" src="assets/rocks/rocks.gltf" />
+      <a-asset-item id="sculpt1" src="assets/sculpt_01/sculpt_01.glb" />
+      <a-asset-item id="sculpt2" src="assets/sculpt_02/sculpt_02.glb" />
+      <a-asset-item id="sculpt3" src="assets/sculpt_03/sculpt_03.glb" />
+      <a-asset-item id="sculpt4" src="assets/sculpt_04/sculpt_04.glb" />
+      <a-asset-item id="duneAsset" src="assets/mountains/mountains.glb" />
+      <a-asset-item id="rocksAsset" src="assets/rocks/rocks.glb" />
       <img id="woodDiffuse" src="assets/PlywoodNew0079_diff.jpg" />
       <img id="woodNormal" src="assets/PlywoodNew0079_normals.jpg" />
       <img id="groundDiffuse" src="assets/mountains/mountains_diff.jpg" />
@@ -44,7 +44,7 @@ const App = () => (
         id="groundRoughness"
         src="assets/mountains/mountains_roughness.jpg"
       />
-      <img id="rocksDiffuse" src="assets/rocks/rock_sheet_01.png" />
+      <img id="rocksDiffuse" src="assets/rocks/rock_sheet_01.jpg" />
       <img id="wall1" src="assets/posters/wall_01.jpg" />
       <img id="wall2" src="assets/posters/wall_02.jpg" />
       <img id="wall3" src="assets/posters/wall_03.jpg" />
@@ -82,7 +82,7 @@ const App = () => (
       src="#duneAsset"
       position="0 0 0"
       scale="1 1 1"
-      set-gltf-material="color: #ffffff; receiveShadow: true;"
+      mountains-material
     />
     <a-gltf-model
       id="rocks"
@@ -91,7 +91,14 @@ const App = () => (
       scale="1 1 1"
       rock-material
     />
-    <a-gltf-model name="gallery" src="#gallery" position="-38.43347 0.924 71.77652" rotation="0 50.671241485779746 0" gallery-material="" gltf-model="assets/gallery/gallery.gltf"></a-gltf-model>
+    <a-gltf-model
+      name="gallery"
+      src="#gallery"
+      position="-38.43347 0.924 71.77652"
+      rotation="0 50.671241485779746 0"
+      gallery-material=""
+      gltf-model="assets/gallery/gallery.gltf"
+    ></a-gltf-model>
 
     {/*
      * Sculptures
@@ -145,3 +152,7 @@ const App = () => (
 );
 
 document.querySelector('body').appendChild(App());
+
+document.querySelector('a-assets').addEventListener('loaded', function () {
+  console.log('OK LOADED from main');
+});
