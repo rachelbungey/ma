@@ -23,6 +23,4 @@ AFRAME.registerComponent('rock-material', {
       });
     });
   },
-
-  tick: function (time) {},
 });

@@ -40,11 +40,22 @@ AFRAME.registerComponent('sculpt-material', {
     this.scene = document.querySelector('a-scene');
     this.renderer = document.querySelector('a-scene').renderer;
     this.renderer.shadowMap.autoUpdate = false;
-      
+
     this.cubeCamera = new THREE.CubeCamera(1, 100000, 128);
     this.cubeCamera.position.set(0, 10, 0);
     this.el.object3D.add(this.cubeCamera);
 
+    // HACK: Make sure we update reflection prob every time new image is loaded
+    const imgs = document.querySelectorAll('img');
+
+    imgs.forEach((img) => {
+      img.addEventListener('load', () => {
+        this.needEnvUpdate = true;
+        this.renderer.shadowMap.needsUpdate = true;
+      });
+    });
+
+    // HACK: Make sure we update reflection prob every time new model is loaded
     this.el.sceneEl.addEventListener('model-loaded', () => {
       this.needEnvUpdate = true;
       this.renderer.shadowMap.needsUpdate = true;
